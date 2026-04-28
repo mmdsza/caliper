@@ -1,0 +1,34 @@
+[project]
+name = "easytrain-server"
+version = "0.0.1"
+description = "Thin FastAPI backend that runs graders against eval sets and returns a RunReport."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.7",
+    "easytrain-sdk",
+    "easytrain-store",
+]
+
+[project.optional-dependencies]
+# Required when EASYTRAIN_GRADER_EXECUTOR=e2b. Default executor is in-process,
+# so the dev workspace doesn't pull these in by default.
+e2b = [
+    "e2b-code-interpreter>=1.0",
+]
+
+[project.scripts]
+easytrain-server = "easytrain_server.cli:main"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/easytrain_server"]

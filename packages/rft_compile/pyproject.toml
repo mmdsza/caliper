@@ -1,0 +1,16 @@
+[project]
+name = "easytrain-rft"
+version = "0.0.1"
+description = "Compile EasyTrain grader specs to OpenAI RFT JSON."
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.7",
+    "easytrain-sdk",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/easytrain_rft"]

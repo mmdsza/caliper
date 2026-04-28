@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: #1e1e1e;
+  color: #e6e6e6;
+}
+
+#__next,
+body > div:first-child {
+  height: 100%;
+}
