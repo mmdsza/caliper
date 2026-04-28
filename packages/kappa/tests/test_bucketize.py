@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import pytest
-from easytrain_kappa import DEFAULT_BIN_EDGES, bucketize
-from easytrain_kappa._bucketize import n_buckets, validate_bin_edges
+from caliper_kappa import DEFAULT_BIN_EDGES, bucketize
+from caliper_kappa._bucketize import n_buckets, validate_bin_edges
 
 
 class TestValidateEdges:

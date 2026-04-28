@@ -1,6 +1,6 @@
-"""Tests for `easytrain_mutate.runner.run_mutations` and the formatter.
+"""Tests for `caliper_mutate.runner.run_mutations` and the formatter.
 
-We deliberately do NOT import from `easytrain_mutate.mutations` — that
+We deliberately do NOT import from `caliper_mutate.mutations` — that
 module is owned by another agent. All stand-in mutations live in this
 file so the runner tests are self-contained and order-independent
 relative to the mutations test suite.
@@ -8,11 +8,11 @@ relative to the mutations test suite.
 
 from __future__ import annotations
 
-from easytrain_mutate.format import format_mutation_report
-from easytrain_mutate.report import MutationReport
-from easytrain_mutate.runner import run_mutations
-from easytrain_mutate.types import MutationExpectation
-from easytrain_sdk import EvalRow, GraderResult, Rollout
+from caliper_mutate.format import format_mutation_report
+from caliper_mutate.report import MutationReport
+from caliper_mutate.runner import run_mutations
+from caliper_mutate.types import MutationExpectation
+from caliper_sdk import EvalRow, GraderResult, Rollout
 
 # ---------------------------------------------------------------------------
 # Stand-in mutations (do not depend on the real `mutations.py`).

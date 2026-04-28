@@ -1,11 +1,11 @@
 """Shared fixtures for server tests."""
 
 import pytest
-from easytrain_server import create_app
+from caliper_server import create_app
 from fastapi.testclient import TestClient
 
 SAMPLE_GRADER_SOURCE = '''
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 
 @grader(name="legal_citation_grader", version="0.1.0")

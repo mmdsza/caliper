@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 
 import pytest
-from easytrain_rft import (
+from caliper_rft import (
     MultiGrader,
     PythonGrader,
     ScoreModelGrader,

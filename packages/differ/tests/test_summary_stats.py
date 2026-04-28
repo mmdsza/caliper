@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from math import isclose
 
-from easytrain_differ import diff_graders
-from easytrain_sdk.types import GraderResult, Rollout
+from caliper_differ import diff_graders
+from caliper_sdk.types import GraderResult, Rollout
 
 # Indexed by row id "0".."9" — chosen so v1 + delta stays in [0, 1].
 _DELTAS = [-0.4, -0.1, 0.0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 0.6]

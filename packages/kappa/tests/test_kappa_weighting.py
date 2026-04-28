@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from easytrain_kappa import KappaWeighting, LabeledRow, LabelSet, compute_kappa
-from easytrain_kappa._kappa import _weight_matrix
+from caliper_kappa import KappaWeighting, LabeledRow, LabelSet, compute_kappa
+from caliper_kappa._kappa import _weight_matrix
 
 # 3-bucket bins so distance-1 vs distance-2 errors are distinguishable.
 TERNARY_EDGES = [0.0, 0.34, 0.67, 1.0]

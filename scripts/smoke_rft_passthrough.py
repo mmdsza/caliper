@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 import sys
 
-from easytrain_rft import (
+from caliper_rft import (
     JobStatus,
     MultiGrader,
     PythonGrader,
@@ -22,7 +22,7 @@ from easytrain_rft import (
     StringCheckGrader,
     build_payload,
 )
-from easytrain_rft.testing import FakeRFTClient
+from caliper_rft.testing import FakeRFTClient
 
 
 def main() -> int:

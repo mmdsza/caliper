@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import pytest
-from easytrain_rft import StringCheckGrader, compile_to_rft
+from caliper_rft import StringCheckGrader, compile_to_rft
 from pydantic import ValidationError
 
 

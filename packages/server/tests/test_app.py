@@ -1,13 +1,13 @@
 """FastAPI route tests via TestClient."""
 
-from easytrain_sdk import (
+from caliper_sdk import (
     EvalRow,
     GraderLoadError,
     RowResult,
     RunReport,
 )
-from easytrain_server import create_app
-from easytrain_server.executor import ExecutorResult, SandboxError
+from caliper_server import create_app
+from caliper_server.executor import ExecutorResult, SandboxError
 from fastapi.testclient import TestClient
 
 
@@ -154,7 +154,7 @@ def test_dry_run_unknown_eval_set(client: TestClient, sample_grader_source: str)
 
 def test_dry_run_grader_raises_per_row(client: TestClient) -> None:
     src = """
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 @grader
 def explodes(r: Rollout) -> float:

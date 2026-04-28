@@ -15,8 +15,8 @@ from __future__ import annotations
 from unittest.mock import MagicMock
 
 import pytest
-from easytrain_rft import Job, JobStatus
-from easytrain_rft.clients import OpenAIRFTClient
+from caliper_rft import Job, JobStatus
+from caliper_rft.clients import OpenAIRFTClient
 
 
 def _make_mock_openai_client() -> MagicMock:

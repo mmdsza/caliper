@@ -1,4 +1,4 @@
-# EasyTrain
+# Caliper
 
 A grader/eval authoring stack for LLM post-training. Author Python graders in a Monaco-based browser editor, dry-run them against versioned eval sets, mutation-test for reward-hack holes, compute Cohen's κ vs reference labels, and compile to OpenAI's reinforcement-fine-tuning JSON spec.
 
@@ -66,8 +66,8 @@ uv run python scripts/smoke_e2b_sandbox.py    # SKIPs without E2B_API_KEY
 
 - **Mutation testing for graders** (`packages/mutate/`) — 8 built-in mutations (drop-format-gate, wrong-answer, truncate, whitespace-perturb, prepend-sycophancy, append-garbage, case-perturb, hardcode-gold) plus a rank-order CI gate. Surfaces graders that pass on the surface but accept reward-hacked outputs.
 - **Cohen's κ tracking** (`packages/kappa/`) — unweighted / linear-weighted / quadratic-weighted κ between a grader and a labeled reference set, with explicit `kappa_undefined` flag for the math-undefined cases. Pure stdlib + Pydantic.
-- **Pluggable grader executor** (`packages/server/src/easytrain_server/executor.py`) — `InProcessExecutor` for offline tests, `E2BExecutor` runs grader source inside a Firecracker microVM with the workspace SDK shipped in as a wheel. Selected via `EASYTRAIN_GRADER_EXECUTOR=in_process|e2b`.
-- **Versioned content-addressed eval-set storage** (`packages/store/`) — `EvalSetStore` Protocol, two backends (`InMemoryStore` + `SqlStore` via SQLAlchemy 2.x over SQLite or Postgres), 12-char SHA-256 content hashes, idempotent `create()`. Selected via `EASYTRAIN_STORE_URL`.
+- **Pluggable grader executor** (`packages/server/src/caliper_server/executor.py`) — `InProcessExecutor` for offline tests, `E2BExecutor` runs grader source inside a Firecracker microVM with the workspace SDK shipped in as a wheel. Selected via `CALIPER_GRADER_EXECUTOR=in_process|e2b`.
+- **Versioned content-addressed eval-set storage** (`packages/store/`) — `EvalSetStore` Protocol, two backends (`InMemoryStore` + `SqlStore` via SQLAlchemy 2.x over SQLite or Postgres), 12-char SHA-256 content hashes, idempotent `create()`. Selected via `CALIPER_STORE_URL`.
 - **OpenAI RFT passthrough** (`packages/rft_compile/`) — multi-grader specs compile to OpenAI's `method.type=reinforcement` wire format; `RFTRunner` + `OpenAIRFTClient` (mocked SDK tests, no API key needed) submit and poll through `queued → running → succeeded`.
 
 ## Stack

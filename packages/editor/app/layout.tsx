@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "EasyTrain — Grader Editor",
+  title: "Caliper — Grader Editor",
   description: "Author and iterate on grader / reward functions for RFT.",
 };
 

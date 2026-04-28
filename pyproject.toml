@@ -1,5 +1,5 @@
 [project]
-name = "easytrain"
+name = "caliper"
 version = "0.0.1"
 description = "Testing and CI layer for model behavior — grader IDE + reward-function CI/CD."
 requires-python = ">=3.12"
@@ -18,14 +18,14 @@ members = [
 ]
 
 [tool.uv.sources]
-easytrain-sdk = { workspace = true }
-easytrain-rft = { workspace = true }
-easytrain-differ = { workspace = true }
-easytrain-monitor = { workspace = true }
-easytrain-mutate = { workspace = true }
-easytrain-kappa = { workspace = true }
-easytrain-store = { workspace = true }
-easytrain-server = { workspace = true }
+caliper-sdk = { workspace = true }
+caliper-rft = { workspace = true }
+caliper-differ = { workspace = true }
+caliper-monitor = { workspace = true }
+caliper-mutate = { workspace = true }
+caliper-kappa = { workspace = true }
+caliper-store = { workspace = true }
+caliper-server = { workspace = true }
 
 [dependency-groups]
 dev = [
@@ -33,14 +33,14 @@ dev = [
     "pytest-cov>=5.0",
     "ruff>=0.6",
     "httpx>=0.27",
-    "easytrain-sdk",
-    "easytrain-rft",
-    "easytrain-differ",
-    "easytrain-monitor",
-    "easytrain-mutate",
-    "easytrain-kappa",
-    "easytrain-store",
-    "easytrain-server",
+    "caliper-sdk",
+    "caliper-rft",
+    "caliper-differ",
+    "caliper-monitor",
+    "caliper-mutate",
+    "caliper-kappa",
+    "caliper-store",
+    "caliper-server",
 ]
 
 [tool.ruff]

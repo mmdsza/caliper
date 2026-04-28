@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import pytest
-from easytrain_rft import validate_calculate_output
+from caliper_rft import validate_calculate_output
 
 VALID_NAMES = {"a", "b"}
 

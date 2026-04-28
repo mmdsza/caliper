@@ -1,7 +1,7 @@
 """Live smoke for the E2B sandbox executor.
 
 Spins a real Firecracker microVM via the E2B SDK, ships the workspace
-``easytrain-sdk`` wheel into it, runs the legal-citation sample grader
+``caliper-sdk`` wheel into it, runs the legal-citation sample grader
 against the ``legal_v3`` fixture (10 rows), and asserts ``mean=0.5``
 (same expected histogram as ``smoke_dry_run.py``).
 
@@ -12,7 +12,7 @@ Skips cleanly when:
 
 Run from repo root:
 
-    EASYTRAIN_GRADER_EXECUTOR=e2b E2B_API_KEY=... \\
+    CALIPER_GRADER_EXECUTOR=e2b E2B_API_KEY=... \\
         uv run --extra e2b python scripts/smoke_e2b_sandbox.py
 
 Not run in CI by default — `uv sync` doesn't pull the e2b extra and we
@@ -24,12 +24,12 @@ from __future__ import annotations
 import os
 import sys
 
-from easytrain_server._seed import LEGAL_V3_ROWS
-from easytrain_server.executor import E2BExecutor
+from caliper_server._seed import LEGAL_V3_ROWS
+from caliper_server.executor import E2BExecutor
 
 
 SAMPLE_GRADER_SOURCE = '''
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 
 @grader(name="legal_citation_grader", version="0.1.0")

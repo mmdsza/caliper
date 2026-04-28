@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from easytrain_monitor import FormatOnlyShapingRubric
-from easytrain_sdk.types import Rollout
+from caliper_monitor import FormatOnlyShapingRubric
+from caliper_sdk.types import Rollout
 
 
 def test_empty_think_block_with_boxed_is_flagged() -> None:

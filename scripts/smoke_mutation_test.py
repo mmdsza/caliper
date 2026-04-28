@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import sys
 
-from easytrain_mutate import (
+from caliper_mutate import (
     AppendGarbage,
     CasePerturb,
     DropFormatGate,
@@ -31,8 +31,8 @@ from easytrain_mutate import (
     format_mutation_report,
     run_mutations,
 )
-from easytrain_sdk import GraderResult, Rollout, grader
-from easytrain_server._seed import LEGAL_V3_ROWS
+from caliper_sdk import GraderResult, Rollout, grader
+from caliper_server._seed import LEGAL_V3_ROWS
 
 
 @grader(name="robust_legal", version="0.1.0")

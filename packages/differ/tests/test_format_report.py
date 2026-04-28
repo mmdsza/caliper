@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from easytrain_differ import diff_graders, format_report
-from easytrain_sdk.types import GraderResult, Rollout
+from caliper_differ import diff_graders, format_report
+from caliper_sdk.types import GraderResult, Rollout
 
 
 def v1(_rollout: Rollout) -> GraderResult:

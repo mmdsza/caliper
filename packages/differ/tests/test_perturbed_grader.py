@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from math import isclose
 
-from easytrain_differ import diff_graders
-from easytrain_sdk.types import EvalRow, GraderResult, Rollout
+from caliper_differ import diff_graders
+from caliper_sdk.types import EvalRow, GraderResult, Rollout
 
 
 def make_v1(_rollout: Rollout) -> GraderResult:

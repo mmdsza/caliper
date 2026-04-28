@@ -23,14 +23,14 @@ from __future__ import annotations
 
 import sys
 
-from easytrain_kappa import (
+from caliper_kappa import (
     KappaWeighting,
     LabeledRow,
     LabelSet,
     compute_kappa,
 )
-from easytrain_sdk import GraderResult, Rollout, grader
-from easytrain_server._seed import LEGAL_V3_ROWS
+from caliper_sdk import GraderResult, Rollout, grader
+from caliper_server._seed import LEGAL_V3_ROWS
 
 
 @grader(name="legal_citation_grader", version="0.1.0")

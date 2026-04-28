@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 
 import pytest
-from easytrain_rft import (
+from caliper_rft import (
     Job,
     JobStatus,
     MultiGrader,
@@ -15,8 +15,8 @@ from easytrain_rft import (
     StringCheckGrader,
     build_payload,
 )
-from easytrain_rft.runner import RFTRunPayload
-from easytrain_rft.testing import FakeRFTClient
+from caliper_rft.runner import RFTRunPayload
+from caliper_rft.testing import FakeRFTClient
 
 
 @pytest.fixture

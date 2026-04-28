@@ -10,7 +10,7 @@ Each mutation gets:
 
 from __future__ import annotations
 
-from easytrain_mutate.mutations import (
+from caliper_mutate.mutations import (
     AppendGarbage,
     CasePerturb,
     DropFormatGate,
@@ -20,8 +20,8 @@ from easytrain_mutate.mutations import (
     WhitespacePerturb,
     WrongAnswer,
 )
-from easytrain_mutate.types import Mutation, MutationExpectation
-from easytrain_sdk import Rollout
+from caliper_mutate.types import Mutation, MutationExpectation
+from caliper_sdk import Rollout
 
 # --- DropFormatGate ----------------------------------------------------------
 

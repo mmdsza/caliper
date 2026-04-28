@@ -12,8 +12,8 @@ from collections.abc import Callable
 from typing import Any
 
 import pytest
-from easytrain_sdk import EvalRow, Rollout
-from easytrain_store import (
+from caliper_sdk import EvalRow, Rollout
+from caliper_store import (
     EvalSetNotFound,
     EvalSetStore,
     InMemoryStore,

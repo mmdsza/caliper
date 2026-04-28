@@ -7,7 +7,7 @@ export interface SampleGrader {
 export const sampleGrader: SampleGrader = {
   name: "legal_citation_grader",
   version: "0.1.0",
-  source: `from easytrain_sdk import grader, Rollout, GraderResult
+  source: `from caliper_sdk import grader, Rollout, GraderResult
 
 
 @grader(name="legal_citation_grader", version="0.1.0")

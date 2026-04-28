@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import pytest
-from easytrain_sdk import EvalRow, Rollout
+from caliper_sdk import EvalRow, Rollout
 
 
 @pytest.fixture

@@ -16,8 +16,8 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from easytrain_sdk import EvalRow, GraderLoadError, Rollout
-from easytrain_server.executor import (
+from caliper_sdk import EvalRow, GraderLoadError, Rollout
+from caliper_server.executor import (
     E2BExecutor,
     InProcessExecutor,
     SandboxError,
@@ -25,7 +25,7 @@ from easytrain_server.executor import (
 )
 
 OK_GRADER = '''
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 
 @grader(name="ok_grader", version="1.2.3")
@@ -60,7 +60,7 @@ class TestInProcessExecutor:
 
     def test_per_row_failure_in_report(self, rows: list[EvalRow]) -> None:
         src = '''
-from easytrain_sdk import grader, Rollout
+from caliper_sdk import grader, Rollout
 
 @grader
 def explodes(r: Rollout) -> float:
@@ -167,7 +167,7 @@ def _make_executor(
     Skipping the real wheel build keeps the test offline and fast — the
     wheel-build path is exercised separately in the live smoke.
     """
-    wheel = tmp_path / "easytrain_sdk-0.0.1-py3-none-any.whl"
+    wheel = tmp_path / "caliper_sdk-0.0.1-py3-none-any.whl"
     wheel.write_bytes(b"fake-wheel-bytes")
     return E2BExecutor(
         sandbox_factory=lambda timeout: sandbox,
@@ -303,20 +303,20 @@ class TestBuildFromEnv:
         assert isinstance(executor, InProcessExecutor)
 
     def test_explicit_in_process(self) -> None:
-        executor = build_from_env(env={"EASYTRAIN_GRADER_EXECUTOR": "in_process"})
+        executor = build_from_env(env={"CALIPER_GRADER_EXECUTOR": "in_process"})
         assert isinstance(executor, InProcessExecutor)
 
     def test_aliases_accepted(self) -> None:
         for alias in ("inprocess", "local", "IN_PROCESS"):
-            executor = build_from_env(env={"EASYTRAIN_GRADER_EXECUTOR": alias})
+            executor = build_from_env(env={"CALIPER_GRADER_EXECUTOR": alias})
             assert isinstance(executor, InProcessExecutor)
 
     def test_e2b_requires_extra(self, monkeypatch: pytest.MonkeyPatch) -> None:
         # E2B SDK isn't installed in the dev workspace, so building one
         # surfaces a clean ImportError naming the extra.
         with pytest.raises(ImportError, match="e2b-code-interpreter"):
-            build_from_env(env={"EASYTRAIN_GRADER_EXECUTOR": "e2b"})
+            build_from_env(env={"CALIPER_GRADER_EXECUTOR": "e2b"})
 
     def test_unknown_value_raises(self) -> None:
-        with pytest.raises(ValueError, match="unknown EASYTRAIN_GRADER_EXECUTOR"):
-            build_from_env(env={"EASYTRAIN_GRADER_EXECUTOR": "modal"})
+        with pytest.raises(ValueError, match="unknown CALIPER_GRADER_EXECUTOR"):
+            build_from_env(env={"CALIPER_GRADER_EXECUTOR": "modal"})

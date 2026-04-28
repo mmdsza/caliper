@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import pytest
-from easytrain_sdk import GraderResult, Rollout, grader
+from caliper_sdk import GraderResult, Rollout, grader
 
 
 def _rollout() -> Rollout:

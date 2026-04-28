@@ -17,12 +17,12 @@ import pytest
 DRIVER = (
     Path(__file__).resolve().parents[1]
     / "src"
-    / "easytrain_server"
+    / "caliper_server"
     / "_sandbox_driver.py"
 )
 
 OK_GRADER = '''
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 
 @grader(name="x", version="9.9.9")
@@ -80,7 +80,7 @@ def test_driver_no_grader_returns_envelope(two_rows: list[dict]) -> None:
 def test_driver_per_row_failure_stays_in_report(two_rows: list[dict]) -> None:
     """Grader exceptions become RowFailure entries — not load errors."""
     src = '''
-from easytrain_sdk import grader, Rollout
+from caliper_sdk import grader, Rollout
 
 @grader
 def boom(rollout: Rollout) -> float:

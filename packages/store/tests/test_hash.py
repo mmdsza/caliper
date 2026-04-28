@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from easytrain_sdk import EvalRow, Rollout
-from easytrain_store import VERSION_HASH_LEN, compute_version
+from caliper_sdk import EvalRow, Rollout
+from caliper_store import VERSION_HASH_LEN, compute_version
 
 
 def test_hash_length_and_hex() -> None:

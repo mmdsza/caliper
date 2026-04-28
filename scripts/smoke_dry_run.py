@@ -69,7 +69,7 @@ def main() -> int:
 
     print(f"[smoke] starting server on :{SERVER_PORT}…")
     proc = subprocess.Popen(
-        ["uv", "run", "easytrain-server", "--port", str(SERVER_PORT)],
+        ["uv", "run", "caliper-server", "--port", str(SERVER_PORT)],
         cwd=REPO,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,

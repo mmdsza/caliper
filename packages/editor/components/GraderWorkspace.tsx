@@ -5,7 +5,7 @@ import { dryRun, type DryRunError, type DryRunResponse } from "../lib/api";
 import { GraderEditor } from "./GraderEditor";
 import { ResultsPanel } from "./ResultsPanel";
 
-const STORAGE_KEY = "easytrain.editor.draft";
+const STORAGE_KEY = "caliper.editor.draft";
 const DEFAULT_EVAL_SET = "legal_v3";
 
 interface GraderWorkspaceProps {
@@ -87,7 +87,7 @@ export function GraderWorkspace({
           <div
             style={{ fontSize: 14, fontWeight: 600, letterSpacing: 0.2 }}
           >
-            EasyTrain · Grader Editor
+            Caliper · Grader Editor
           </div>
           <div
             style={{

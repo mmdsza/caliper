@@ -1,10 +1,10 @@
 """load_grader_from_source: exec source, find @grader, edge cases."""
 
 import pytest
-from easytrain_sdk import GraderLoadError, Rollout, load_grader_from_source
+from caliper_sdk import GraderLoadError, Rollout, load_grader_from_source
 
 SAMPLE_GRADER_SOURCE = '''
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 
 @grader(name="legal_citation_grader", version="0.1.0")
@@ -26,7 +26,7 @@ def test_loads_simple_grader() -> None:
 
 
 def test_syntax_error_reports_line() -> None:
-    bad = "from easytrain_sdk import grader\ndef foo(:\n    pass\n"
+    bad = "from caliper_sdk import grader\ndef foo(:\n    pass\n"
     with pytest.raises(GraderLoadError, match="syntax error at line"):
         load_grader_from_source(bad)
 
@@ -45,7 +45,7 @@ def test_no_grader_found() -> None:
 
 def test_multiple_graders_rejected() -> None:
     src = """
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 @grader
 def first(r: Rollout) -> float:
@@ -61,7 +61,7 @@ def second(r: Rollout) -> float:
 
 def test_grader_with_explicit_name_and_version() -> None:
     src = """
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 @grader(name="custom_name", version="2.5.0")
 def whatever(r: Rollout) -> float:
@@ -75,7 +75,7 @@ def whatever(r: Rollout) -> float:
 def test_loaded_grader_runs() -> None:
     """End-to-end: load a grader, then actually invoke it on a Rollout."""
     src = """
-from easytrain_sdk import grader, Rollout, GraderResult
+from caliper_sdk import grader, Rollout, GraderResult
 
 @grader
 def hello(r: Rollout) -> float:

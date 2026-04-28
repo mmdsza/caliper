@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from easytrain_kappa import (
+from caliper_kappa import (
     LabeledRow,
     LabelSet,
     compute_kappa,
@@ -70,7 +70,7 @@ def test_out_of_range_grader_score_becomes_failure(make_eval_row: Any) -> None:
     surface it as a row failure. We simulate by skipping the @grader
     decorator and bypassing validation.
     """
-    from easytrain_sdk import GraderResult, Rollout
+    from caliper_sdk import GraderResult, Rollout
 
     def raw_grader(rollout: Rollout) -> GraderResult:
         # Bypass GraderResult validation by using model_construct.

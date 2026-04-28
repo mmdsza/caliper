@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import pytest
-from easytrain_monitor import LLMJudgeRubric
-from easytrain_sdk.types import Rollout
+from caliper_monitor import LLMJudgeRubric
+from caliper_sdk.types import Rollout
 
 from .conftest import MockLLMClient
 

@@ -4,15 +4,15 @@ requires-python = ">=3.12"
 
 [manifest]
 members = [
-    "easytrain",
-    "easytrain-differ",
-    "easytrain-kappa",
-    "easytrain-monitor",
-    "easytrain-mutate",
-    "easytrain-rft",
-    "easytrain-sdk",
-    "easytrain-server",
-    "easytrain-store",
+    "caliper",
+    "caliper-differ",
+    "caliper-kappa",
+    "caliper-monitor",
+    "caliper-mutate",
+    "caliper-rft",
+    "caliper-sdk",
+    "caliper-server",
+    "caliper-store",
 ]
 
 [[package]]
@@ -223,20 +223,20 @@ wheels = [
 ]
 
 [[package]]
-name = "easytrain"
+name = "caliper"
 version = "0.0.1"
 source = { virtual = "." }
 
 [package.dev-dependencies]
 dev = [
-    { name = "easytrain-differ" },
-    { name = "easytrain-kappa" },
-    { name = "easytrain-monitor" },
-    { name = "easytrain-mutate" },
-    { name = "easytrain-rft" },
-    { name = "easytrain-sdk" },
-    { name = "easytrain-server" },
-    { name = "easytrain-store" },
+    { name = "caliper-differ" },
+    { name = "caliper-kappa" },
+    { name = "caliper-monitor" },
+    { name = "caliper-mutate" },
+    { name = "caliper-rft" },
+    { name = "caliper-sdk" },
+    { name = "caliper-server" },
+    { name = "caliper-store" },
     { name = "httpx" },
     { name = "pytest" },
     { name = "pytest-cov" },
@@ -247,14 +247,14 @@ dev = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "easytrain-differ", editable = "packages/differ" },
-    { name = "easytrain-kappa", editable = "packages/kappa" },
-    { name = "easytrain-monitor", editable = "packages/monitor" },
-    { name = "easytrain-mutate", editable = "packages/mutate" },
-    { name = "easytrain-rft", editable = "packages/rft_compile" },
-    { name = "easytrain-sdk", editable = "packages/sdk" },
-    { name = "easytrain-server", editable = "packages/server" },
-    { name = "easytrain-store", editable = "packages/store" },
+    { name = "caliper-differ", editable = "packages/differ" },
+    { name = "caliper-kappa", editable = "packages/kappa" },
+    { name = "caliper-monitor", editable = "packages/monitor" },
+    { name = "caliper-mutate", editable = "packages/mutate" },
+    { name = "caliper-rft", editable = "packages/rft_compile" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
+    { name = "caliper-server", editable = "packages/server" },
+    { name = "caliper-store", editable = "packages/store" },
     { name = "httpx", specifier = ">=0.27" },
     { name = "pytest", specifier = ">=8.0" },
     { name = "pytest-cov", specifier = ">=5.0" },
@@ -262,82 +262,82 @@ dev = [
 ]
 
 [[package]]
-name = "easytrain-differ"
+name = "caliper-differ"
 version = "0.0.1"
 source = { editable = "packages/differ" }
 dependencies = [
-    { name = "easytrain-sdk" },
+    { name = "caliper-sdk" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "easytrain-sdk", editable = "packages/sdk" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
     { name = "pydantic", specifier = ">=2.7" },
 ]
 
 [[package]]
-name = "easytrain-kappa"
+name = "caliper-kappa"
 version = "0.0.1"
 source = { editable = "packages/kappa" }
 dependencies = [
-    { name = "easytrain-sdk" },
+    { name = "caliper-sdk" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "easytrain-sdk", editable = "packages/sdk" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
     { name = "pydantic", specifier = ">=2.7" },
 ]
 
 [[package]]
-name = "easytrain-monitor"
+name = "caliper-monitor"
 version = "0.0.1"
 source = { editable = "packages/monitor" }
 dependencies = [
-    { name = "easytrain-sdk" },
+    { name = "caliper-sdk" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "easytrain-sdk", editable = "packages/sdk" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
     { name = "pydantic", specifier = ">=2.7" },
 ]
 
 [[package]]
-name = "easytrain-mutate"
+name = "caliper-mutate"
 version = "0.0.1"
 source = { editable = "packages/mutate" }
 dependencies = [
-    { name = "easytrain-sdk" },
+    { name = "caliper-sdk" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "easytrain-sdk", editable = "packages/sdk" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
     { name = "pydantic", specifier = ">=2.7" },
 ]
 
 [[package]]
-name = "easytrain-rft"
+name = "caliper-rft"
 version = "0.0.1"
 source = { editable = "packages/rft_compile" }
 dependencies = [
-    { name = "easytrain-sdk" },
+    { name = "caliper-sdk" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "easytrain-sdk", editable = "packages/sdk" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
     { name = "pydantic", specifier = ">=2.7" },
 ]
 
 [[package]]
-name = "easytrain-sdk"
+name = "caliper-sdk"
 version = "0.0.1"
 source = { editable = "packages/sdk" }
 dependencies = [
@@ -348,12 +348,12 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.7" }]
 
 [[package]]
-name = "easytrain-server"
+name = "caliper-server"
 version = "0.0.1"
 source = { editable = "packages/server" }
 dependencies = [
-    { name = "easytrain-sdk" },
-    { name = "easytrain-store" },
+    { name = "caliper-sdk" },
+    { name = "caliper-store" },
     { name = "fastapi" },
     { name = "pydantic" },
     { name = "uvicorn", extra = ["standard"] },
@@ -372,8 +372,8 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "e2b-code-interpreter", marker = "extra == 'e2b'", specifier = ">=1.0" },
-    { name = "easytrain-sdk", editable = "packages/sdk" },
-    { name = "easytrain-store", editable = "packages/store" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
+    { name = "caliper-store", editable = "packages/store" },
     { name = "fastapi", specifier = ">=0.115" },
     { name = "pydantic", specifier = ">=2.7" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.32" },
@@ -384,11 +384,11 @@ provides-extras = ["e2b"]
 dev = [{ name = "httpx", specifier = ">=0.27" }]
 
 [[package]]
-name = "easytrain-store"
+name = "caliper-store"
 version = "0.0.1"
 source = { editable = "packages/store" }
 dependencies = [
-    { name = "easytrain-sdk" },
+    { name = "caliper-sdk" },
     { name = "pydantic" },
     { name = "sqlalchemy" },
 ]
@@ -400,7 +400,7 @@ postgres = [
 
 [package.metadata]
 requires-dist = [
-    { name = "easytrain-sdk", editable = "packages/sdk" },
+    { name = "caliper-sdk", editable = "packages/sdk" },
     { name = "psycopg", extras = ["binary"], marker = "extra == 'postgres'", specifier = ">=3.2" },
     { name = "pydantic", specifier = ">=2.7" },
     { name = "sqlalchemy", specifier = ">=2.0" },

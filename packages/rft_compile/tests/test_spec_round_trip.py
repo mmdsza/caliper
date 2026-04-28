@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from easytrain_rft import (
+from caliper_rft import (
     LabelModelGrader,
     MultiGrader,
     PythonGrader,

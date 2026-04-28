@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from easytrain_kappa import (
+from caliper_kappa import (
     KappaWeighting,
     LabeledRow,
     LabelSet,

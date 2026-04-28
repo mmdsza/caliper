@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from easytrain_monitor import TestMonkeyPatchRubric
-from easytrain_sdk.types import Rollout
+from caliper_monitor import TestMonkeyPatchRubric
+from caliper_sdk.types import Rollout
 
 
 def test_response_defining_test_with_hardcoded_answer_is_flagged() -> None:

@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from easytrain_monitor import Monitor, RubricVerdict
-from easytrain_sdk.types import Rollout
+from caliper_monitor import Monitor, RubricVerdict
+from caliper_sdk.types import Rollout
 
 
 class _AlwaysFlagRubric:

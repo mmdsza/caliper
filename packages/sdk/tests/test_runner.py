@@ -5,7 +5,7 @@ from __future__ import annotations
 import statistics
 
 import pytest
-from easytrain_sdk import (
+from caliper_sdk import (
     EvalRow,
     GraderResult,
     Rollout,

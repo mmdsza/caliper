@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from easytrain_monitor import TrivialToolCallsRubric
-from easytrain_sdk.types import Rollout
+from caliper_monitor import TrivialToolCallsRubric
+from caliper_sdk.types import Rollout
 
 
 def _trivial_trace() -> list[dict]:
